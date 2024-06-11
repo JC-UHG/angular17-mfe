@@ -84,3 +84,33 @@ Create 2 more apps in the same way. These will be remote MFE apps.
 xxx-mf-common - shared components like header or footer
 xxx-mf-about - about page
 ```
+
+### Add and Configure Module Federation
+
+You will need to add the missing angular.json file to each app, before you can run the ng command.
+
+Add and configure module federation with this command.
+
+```ignorelang
+ng add @angular-architects/module-federation --project xxx-mf-host port 4201
+```
+
+You will need to answer a series of prompts.
+
+```ignorelang
+The package @angular-architects/module-federation@18.0.2 will be installed and executed.
+Would you like to proceed? Yes
+✔ Packages successfully installed.
+? Port to use 4201
+
+WARNING: This package uses the tradtional webpack-based Module Federation implementation and not the fast new esbuild-based ApplicationBuilder.
+
+For new projects, consider Native Federation as an alternative: https://shorturl.at/0ZQ0j
+
+However, if you want to add a new host or remote to an existing Module Federation-based system, this package is what you are looking for.
+
+Do you want to proceeed: [y] Yes [n] No  y
+```
+
+Repeat to install for each MFE app. Use a different port for each.
+
