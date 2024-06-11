@@ -40,3 +40,25 @@ ng new angular-mfe-host
 ? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
 ```
 
+### Create the first MFE remote app
+
+Start in a command terminal at the packages folder.
+
+```ignorelang
+cd packages
+```
+
+From the packages folder in the multi repo, use Angular Client to create the host app.
+
+```ignorelang
+ng new angular-mfe-remote-1
+```
+
+Use these options.
+
+```ignorelang
+ng new angular-mfe-remote-1
+? Which stylesheet format would you like to use? Sass (SCSS)     [ https://sass-lang.com/documentation/syntax#scss                ]
+? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
+```
+
