@@ -2,9 +2,40 @@
 
 Example app for MFE Micro Front End using Angular 17
 
+## References
+
+Following this video by Jack Herrington.
+
+Angular Module Federation Micro-FE Speed Run
+
+https://www.youtube.com/watch?v=EzJF0IUoYhQ
+
+His code on github is here:
+
+https://github.com/jherr/ang-pokemon-mfe
+
+He is following an article in Medium.
+
+Micro Frontends in Angular using Nx and Module Federation
+
+https://gabrielemilan.dev/micro-frontends-in-angular-using-nx-and-module-federation-a30c5a2c1354
+
+But he will split by component instead of by route.
+
+He uses NX to generate the apps.
+
+
 ## Setup Log
 
-## Create the folders needed for the Multi Repo
+### Install NX
+
+Install NX globally.
+
+```ignorelang
+npm i -g nx
+```
+
+### Create the folders needed for the Multi Repo
 
 Create the root folder for the repo, which will contain multiple Angular apps.
 
@@ -16,49 +47,40 @@ That is because each MFE should be stand-alone, and the build and deploy should 
 mkdir angular17-mfe
 ```
 
-Create a packages folder to contain multiple angular apps.
+Create a folder to contain multiple angular apps.
 
 ```ignorelang
 cd angular17-mfe
-mkdir packages
-cd packages
+mkdir apps
+cd apps
 ```
 
-### Create the Host app
+### Create the host MFE app
 
-From the packages folder in the multi repo, use Angular Client to create the host app.
+In a terminal window, from the apps folder, create the host mfe app using nx.
 
 ```ignorelang
-ng new angular-mfe-host
+npx create-nx-workspace@latest xxx-mf-host
 ```
 
 Use these options.
 
 ```ignorelang
-ng new angular-mfe-host
-? Which stylesheet format would you like to use? Sass (SCSS)     [ https://sass-lang.com/documentation/syntax#scss                ]
-? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
+ Which stack do you want to use? · angular
+✔ Integrated monorepo, or standalone project? · standalone
+✔ Which bundler would you like to use? · webpack
+✔ Default stylesheet format · scss
+✔ Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? · No
+✔ Test runner to use for end to end (E2E) tests · none
+✔ Set up CI with caching, distribution and test deflaking · skip
+✔ Would you like remote caching to make your build faster? · skip
 ```
 
-### Create the first MFE remote app
+### Create the remote MFE apps
 
-Start in a command terminal at the packages folder.
+Create 2 more apps in the same way. These will be remote MFE apps.
 
 ```ignorelang
-cd packages
+xxx-mf-common - shared components like header or footer
+xxx-mf-about - about page
 ```
-
-From the packages folder in the multi repo, use Angular Client to create the host app.
-
-```ignorelang
-ng new angular-mfe-remote-1
-```
-
-Use these options.
-
-```ignorelang
-ng new angular-mfe-remote-1
-? Which stylesheet format would you like to use? Sass (SCSS)     [ https://sass-lang.com/documentation/syntax#scss                ]
-? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
-```
-
