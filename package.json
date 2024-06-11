@@ -1,0 +1,9 @@
+{
+  "name": "angular17-mfe",
+  "version": "1.0.0",
+  "description": "Demo app MFE Micro Front End Example using Angular 17",
+  "main": "index.js",
+  "scripts": {},
+  "author": "JC Lango",
+  "license": "ISC"
+}
