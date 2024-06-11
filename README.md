@@ -129,3 +129,26 @@ cd ../apps/xxx-mf-about
 ```ignorelang
 ng add @angular-architects/module-federation --project xxx-mf-about --port 4203
 ```
+
+After installing the module federation, the package.json of each app will have e scripts section that looks like this:
+
+```ignorelang
+  "scripts": {
+    "start": "nx serve",
+    "build": "nx build",
+    "test": "nx test",
+    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
+  },
+```
+
+**NOTE:**
+
+We do NOT use the ```npm start``` or ```npm run start``` or ```nx serve``` commands to start the MFE.
+
+Use this command to run the MFE:
+
+```ignorelang
+npm run run:all
+```
+
+
