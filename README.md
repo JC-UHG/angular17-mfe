@@ -92,7 +92,7 @@ You will need to add the missing angular.json file to each app, before you can r
 Add and configure module federation with this command.
 
 ```ignorelang
-ng add @angular-architects/module-federation --project xxx-mf-host port 4201
+ng add @angular-architects/module-federation --project xxx-mf-host --port 4201
 ```
 
 You will need to answer a series of prompts.
@@ -114,3 +114,18 @@ Do you want to proceeed: [y] Yes [n] No  y
 
 Repeat to install for each MFE app. Use a different port for each.
 
+```ignorelang
+cd ../apps/xxx-mf-common
+```
+
+```ignorelang
+ng add @angular-architects/module-federation --project xxx-mf-common --port 4202
+```
+
+```ignorelang
+cd ../apps/xxx-mf-about
+```
+
+```ignorelang
+ng add @angular-architects/module-federation --project xxx-mf-about --port 4203
+```
